@@ -33,7 +33,7 @@
   (dolist (pkg jzaustin/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
-					;配置环境变量
+;配置环境变量
 ;(when (memq window-system '(mac ns))
 ;  (exec-path-from-shell-initialize))
 
@@ -57,6 +57,7 @@
 (setq-default cursor-type 'bar)
 ;关闭备份文件
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 ;添加语法高亮
 (require 'org)
 (setq org-src-fontify-natively t)
