@@ -11,11 +11,13 @@
 			    company
 			    monokai-theme
 			    hungry-delete
-				;smex
+			    ;smex
 			    swiper
 			    counsel
 			    smartparens
-				js2-mode
+			    js2-mode
+;			    nodejs-repl
+;			    exec-path-from-shell
 			    )  "Default packages")
 				
 ;;(setq package-selected-packages jzaustin/packages)
@@ -31,7 +33,9 @@
   (dolist (pkg jzaustin/packages)
     (when (not (package-installed-p pkg))
       (package-install pkg))))
-
+					;配置环境变量
+;(when (memq window-system '(mac ns))
+;  (exec-path-from-shell-initialize))
 
 ;关闭工具栏
 (tool-bar-mode -1)
@@ -105,6 +109,6 @@
 	   '(("\\.js\\'" . js2-mode))
 	   auto-mode-alist))
 
-					;org-mode配置
+;org-mode配置
 (setq org-agenda-files '("D:/Documents/org/"))
 (global-set-key (kbd "C-c a" ) 'org-agenda)
